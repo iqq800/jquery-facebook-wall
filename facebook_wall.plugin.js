@@ -11,28 +11,28 @@
 			timeout: 400,
 			speed: 400,
 			effect: 'slide', // slide | fade | none
-			locale: 'da_DK', // your contry code
+			locale: 'en_US', // your contry code
 			avatar_size: 'square', // square | small | normal | large
 			message_length: 200, // Any amount you like. Above 0 shortens the message length
 			show_guest_entries: true, // true | false
 			text_labels: {
 				shares: {
-					singular: 'Delt % gang',
-					plural: 'Delt % gange'
+					singular: 'Shared % Time',
+					plural: 'Shared % Times'
 				},
 				likes: {
-					singular: '% synes godt om',
-					plural: '% synes godt om'
+					singular: '% Like',
+					plural: '% Likes'
 				},
 				comments: {
-					singular: '% kommentar',
-					plural: '% kommentarer'
+					singular: '% Comment',
+					plural: '% Comments'
 				},
-				like: 'Synes godt om',
-				comment: 'Skriv kommentar',
-				share: 'Del',
-                days: ['S&oslash;ndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'L&oslash;rdag'],
-                months: ['januar', 'februar', 'marts', 'april', 'maj', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'december']
+				like: 'Like',
+				comment: 'Add Comment',
+				share: 'Share',
+                days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                months: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 			},
 			on_complete: null
 		}, options);
@@ -215,21 +215,21 @@
                 time_difference = Math.round(new Date().getTime()/1000)-time;
 			
 			if (time_difference < 10) {
-				return 'F&aring; sekunder siden';
+				return 'a few seconds ago';
 			} else if (time_difference < 60) {
-				return Math.round(time_difference) + ' sekunder siden';
+				return Math.round(time_difference) + ' seconds ago';
 			} else if (Math.round(time_difference/60) === 1) {
-				return Math.round(time_difference/60) + ' minut siden';
+				return Math.round(time_difference/60) + ' minute ago';
 			} else if (Math.round(time_difference/60) < 60) {
-				return Math.round(time_difference/60) + ' minutter siden';
+				return Math.round(time_difference/60) + ' minutes ago';
 			} else if (Math.round(time_difference/(60*60)) === 1) {
-				return Math.round(time_difference/(60*60)) + ' time siden';
+				return Math.round(time_difference/(60*60)) + ' hour ago';
 			} else if (Math.round(time_difference/(60*60)) < 24) {
-				return Math.round(time_difference/(60*60)) + ' timer siden';
+				return Math.round(time_difference/(60*60)) + ' hours ago';
 			} else if (Math.round(time_difference/(60*60*24)) === 1) {
-				return Math.round(time_difference/(60*60*24)) + ' dag siden';
+				return Math.round(time_difference/(60*60*24)) + ' days ago';
 			} else if (Math.round(time_difference/(60*60*24)) <= 10) {
-				return Math.round(time_difference/(60*60*24)) + ' dage siden';
+				return Math.round(time_difference/(60*60*24)) + ' days ago';
 			} else {
 				return options.text_labels.days[timestamp.getDay()] + ' d. ' + timestamp.getDate() + '. ' + options.text_labels.months[timestamp.getMonth()] + ' ' + timestamp.getFullYear();
 			}
