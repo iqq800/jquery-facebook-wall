@@ -1,6 +1,6 @@
 # Facebook Wall
 
-jQuery plugin that lets you show the latest updates from your facebook profile og page. By [http://beta.thomasclausen.dk/facebook-wall/] thomasclausen
+jQuery plugin that lets you show the latest updates from your facebook profile og page. By [http://beta.thomasclausen.dk/facebook-wall/]
 
 ### Examples
 
